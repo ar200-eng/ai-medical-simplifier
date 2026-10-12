@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Stethoscope, UploadCloud, FileText, ShieldAlert, ChevronRight, Loader2, X, Volume2, Printer, Key } from 'lucide-react';
+import { Stethoscope, UploadCloud, FileText, ShieldAlert, ChevronRight, Loader2, X, Volume2, Printer } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import './index.css';
 import { generateMedicalSimplification } from './lib/gemini';
@@ -168,32 +168,6 @@ function App() {
         </div>
         
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          {/* API Key Status / Toggle Button */}
-          <button 
-            type="button"
-            onClick={() => setShowKeyInput(!showKeyInput)}
-            style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.35rem', 
-              padding: '0.45rem 0.75rem', 
-              borderRadius: 'var(--radius-md)', 
-              border: '1px solid var(--border-color)', 
-              backgroundColor: 'white', 
-              fontSize: '0.8rem', 
-              fontWeight: 500, 
-              color: 'var(--text-main)', 
-              cursor: 'pointer' 
-            }}
-            title="Configure Gemini API Key"
-          >
-            <Key size={14} color="#2563eb" />
-            <span>API Key</span>
-            <span style={{ fontSize: '0.7rem', padding: '0.1rem 0.35rem', borderRadius: '4px', backgroundColor: (customApiKey || import.meta.env.VITE_GEMINI_API_KEY) ? '#dcfce7' : '#fee2e2', color: (customApiKey || import.meta.env.VITE_GEMINI_API_KEY) ? '#15803d' : '#b91c1c' }}>
-              {(customApiKey || import.meta.env.VITE_GEMINI_API_KEY) ? 'Active' : 'Missing'}
-            </span>
-          </button>
-
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <label style={{ fontWeight: 500, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Language:</label>
             <select 
